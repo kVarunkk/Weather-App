@@ -160,6 +160,7 @@ img{
 
     .city-name, .sub{
         width: auto;
+        font-weight: 300;
     }
 
     .grid{
