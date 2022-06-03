@@ -51,6 +51,7 @@ input{
     padding: 10px;
     box-shadow: 1px 1px 10px rgb(136,135,135);
     font-family: 'Lato', sans-serif;
+    font-weight: 100;
 }
 
 .city-name:focus{
@@ -70,6 +71,7 @@ input{
     cursor: pointer;
     box-shadow: 1px 1px 10px rgb(136, 135, 135);
     font-family: 'Lato', sans-serif;
+    font-weight: 100;
 }
 
 .sub:hover{
@@ -138,8 +140,22 @@ img{
 
 @media(max-width:480px){
 
-    body{
-        background-attachment: scroll;
+    .bg {
+        background-color: #d5fefd;
+        background-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: -1;
+    }
+
+    .wrapper {
+        position: absolute;
+        margin-top: 0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
     }
 
     .city-name, .sub{
@@ -149,4 +165,32 @@ img{
     .grid{
         width: 100%;
     }
+
+    image{
+        width: 15%;
+    }
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    .bg {
+        background-color: #d5fefd;
+        background-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: -1;
+    }
+
+    .wrapper {
+        position: absolute;
+        margin-top: 0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+
 }
