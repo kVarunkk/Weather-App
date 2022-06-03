@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Raleway:wght@300&family=Asset&family=Titillium+Web&family=Dosis&family=Quicksand:wght@300&family=Lato:wght@100&family=Martel+Sans:wght@200&family=Montserrat&family=Oswald&family=Permanent+Marker&family=Playfair+Display:ital,wght@1,400;1,900&family=Roboto:ital,wght@0,300;1,300&family=Satisfy&display=swap');
+    </style> 
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="heading">
+            Weather App
+        </div>
+    
+        <form action="/" method="post">
+            <input class="city-name" name="city" type="text" placeholder="Name of City">
+            <input class="sub" name="Submit" type="submit" value="Get Weather">
+        </form>
+    
+        <%if( weather !== null){ %>
+
+          
+
+            <div class="grid">
+              <div class="place">
+                <%= place %>
+              </div>
+
+              <div class="temp">
+                <%= temp %>°C
+              </div>
+
+              <div class="feelsLike">
+                Feels Like: <%=feels%>°
+              </div>
+
+              <div class="high-low">
+                H: <%=maxTemp%>° L:<%=minTemp%>°
+              </div>
+
+              <div class="condition">
+                <%=main%>
+              </div>
+
+              <img src=<%= icon %>>
+                
+              
+
+              
+
+              
+
+              
+              <%if(main == 'Clear'){%>
+                  <script>
+                    var gridDiv = document.querySelector('.grid');
+                    gridDiv.style.backgroundImage = "url(giphy.gif)";
+                  </script>
+              <%}%>
+              <%if(main == 'Thunderstorm'){%>
+                <script>
+                  var gridDiv = document.querySelector('.grid');
+                  gridDiv.style.backgroundImage = "url(thunderstorm.gif)";
+                </script>
+            <%}%>
+            <%if(main == 'Drizzle' || main == 'Rain'){%>
+              <script>
+                var gridDiv = document.querySelector('.grid');
+                gridDiv.style.backgroundImage = "url(rain.gif)";
+              </script>
+          <%}%>
+          <%if(main == 'Snow'){%>
+            <script>
+              var gridDiv = document.querySelector('.grid');
+              gridDiv.style.backgroundImage = "url(snow.gif)";
+            </script>
+        <%}%>
+        <%if(id > '700' && id < '782'){%>
+          <script>
+            var gridDiv = document.querySelector('.grid');
+            gridDiv.style.backgroundImage = "url(fog.gif)";
+          </script>
+      <%}%>
+      <%if(main == 'Clouds'){%>
+        <script>
+          var gridDiv = document.querySelector('.grid');
+          gridDiv.style.backgroundImage = "url(clouds.gif)";
+        </script>
+    <%}%>
+              
+            </div>
+        <% } %>    
+    
+        <% if(error !== null){ %>
+            <p class="error">
+              <%= error %>
+            </p>
+            <% } %>
+    </div>
+
+
+    <script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+    </script>
+
+   
+      
+    
+</body>
+</html>
