@@ -158,7 +158,12 @@ img{
         width: 100%;
     }
 
-    .city-name, .sub{
+    .city-name{
+        width: 60%;
+        font-weight: 300;
+    }
+
+    .sub{
         width: auto;
         font-weight: 300;
     }
