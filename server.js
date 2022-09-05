@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
@@ -35,7 +34,6 @@ app.post("/", function (req, res) {
         });
       } else {
         place = `${weather.name}, ${weather.sys.country}`;
-        // place = weather.name + ', ' +  weather.sys.country;
         weatherTimezone = new Date(weather.dt * 1000 - weather.timezone * 1000);
         temp = weather.main.temp;
         weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
